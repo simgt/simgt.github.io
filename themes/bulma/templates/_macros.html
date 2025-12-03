@@ -36,7 +36,9 @@
 
         {% for path in section.subsections %}
         {% set subsection = get_section(path=path) %}
+        {% if not subsection.draft %}
         <a class="navbar-item" href="{{ subsection.permalink }}">{{ subsection.title }}</a>
+        {% endif %}
         {% endfor %}
     
         {% if config.extra.extra_links %}

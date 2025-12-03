@@ -43,7 +43,9 @@
 
           {% for path in section.subsections %}
           {% set subsection = get_section(path=path) %}
+          {% if not subsection.draft %}
             <p><a href="{{ subsection.permalink }}">{{ subsection.title }}</a></p>
+          {% endif %}
           {% endfor %}
         </div>
 
